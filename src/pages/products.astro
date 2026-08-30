@@ -2,19 +2,20 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FeaturePricing from '../components/home/FeaturePricing.astro';
 import PatentShowcase from '../components/home/PatentShowcase.astro';
+import { path } from '../utils/paths';
 ---
 
 <BaseLayout 
   title="產品資訊 - 端詳互動資訊 Scan All Goods" 
   description="端詳互動資訊產品資訊：Ya!Scan 雲端防偽與保固系統、安全線上防偽、線上保固資訊、一對一精準行銷與國家發明專利 I625685號。"
-  currentPath="/products"
+  currentPath={path('/products')}
 >
   <!-- Unified Extended High-Tech Automotive Factory Background -->
   <div class="relative overflow-hidden">
     <!-- Continuous Background: Anchored on the Foreground Component & QR Code -->
     <div class="absolute inset-0 z-0">
       <img 
-        src="/img/products_hero_banner.webp" 
+        src={path('/img/products_hero_banner.webp')} 
         alt="汽車高度自動化產線與一物一碼防偽零件" 
         loading="eager"
         fetchpriority="high"

@@ -1,4 +1,6 @@
 ---
+import { path } from '../../utils/paths';
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -8,7 +10,7 @@ const currentYear = new Date().getFullYear();
       <!-- Left Column: Company Info + Tax ID + Links + Rotary -->
       <div class="space-y-4">
         <div>
-          <img src="/myicon.webp" alt="端詳互動資訊 Logo" class="w-8 h-8 object-contain" />
+          <img src={path('/img/myicon.webp')} alt="端詳互動資訊 Logo" class="w-8 h-8 object-contain" />
         </div>
         <div class="pt-1">
           <h4 class="text-[#1d1d1f] font-semibold text-base leading-tight">
@@ -21,10 +23,10 @@ const currentYear = new Date().getFullYear();
 
         <!-- Links under Tax ID: 聯絡資訊 & 職缺快報 -->
         <div class="pt-1 flex items-center gap-4 flex-wrap">
-          <a href="/contact" class="text-sm font-medium text-brand-green hover:underline">
+          <a href={path('/contact')} class="text-sm font-medium text-brand-green hover:underline">
             聯絡資訊 &rarr;
           </a>
-          <a href="/contact" class="text-sm font-medium text-brand-green hover:underline">
+          <a href={path('/contact')} class="text-sm font-medium text-brand-green hover:underline">
             職缺快報 &rarr;
           </a>
         </div>
@@ -33,11 +35,11 @@ const currentYear = new Date().getFullYear();
         <div class="pt-3 border-t border-black/5 space-y-2">
           <div>
             <div class="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-[#005DAA] shadow-sm">
-              <img src="/img/rotary-white-logo.svg" alt="Rotary International Logo" class="h-6 w-auto object-contain" />
+              <img src={path('/img/rotary-white-logo.svg')} alt="Rotary International Logo" class="h-6 w-auto object-contain" />
             </div>
           </div>
           <div>
-            <a href="/sponsorship" class="text-sm font-semibold text-[#1d1d1f] hover:text-brand-green transition-colors block">
+            <a href={path('/sponsorship')} class="text-sm font-semibold text-[#1d1d1f] hover:text-brand-green transition-colors block">
               社服網站贊助
             </a>
           </div>
@@ -47,39 +49,39 @@ const currentYear = new Date().getFullYear();
       <!-- Services Navigation (Precise Card Anchors) -->
       <div class="space-y-3">
         <h4 class="text-[#1d1d1f] font-semibold text-base">
-          <a href="/services" class="hover:text-brand-green transition-colors">服務項目</a>
+          <a href={path('/services')} class="hover:text-brand-green transition-colors">服務項目</a>
         </h4>
         <ul class="space-y-2 text-sm font-normal text-[#6e6e73]">
-          <li><a href="/services#agentic" class="hover:text-brand-green transition-colors">Agentic程式設計</a></li>
-          <li><a href="/services#ecommerce" class="hover:text-brand-green transition-colors">跨境電商代理營運</a></li>
-          <li><a href="/services#it-consulting" class="hover:text-brand-green transition-colors">資訊應用規劃設計</a></li>
-          <li><a href="/services#data-analysis" class="hover:text-brand-green transition-colors">數據分析營運決策</a></li>
-          <li><a href="/services#customers" class="hover:text-brand-green transition-colors">成功合作案例</a></li>
+          <li><a href={path('/services#agentic')} class="hover:text-brand-green transition-colors">Agentic程式設計</a></li>
+          <li><a href={path('/services#ecommerce')} class="hover:text-brand-green transition-colors">跨境電商代理營運</a></li>
+          <li><a href={path('/services#it-consulting')} class="hover:text-brand-green transition-colors">資訊應用規劃設計</a></li>
+          <li><a href={path('/services#data-analysis')} class="hover:text-brand-green transition-colors">數據分析營運決策</a></li>
+          <li><a href={path('/services#customers')} class="hover:text-brand-green transition-colors">成功合作案例</a></li>
         </ul>
       </div>
 
       <!-- Products Navigation -->
       <div class="space-y-3">
         <h4 class="text-[#1d1d1f] font-semibold text-base">
-          <a href="/products" class="hover:text-brand-green transition-colors">產品資訊</a>
+          <a href={path('/products')} class="hover:text-brand-green transition-colors">產品資訊</a>
         </h4>
         <ul class="space-y-2 text-sm font-normal text-[#6e6e73]">
-          <li><a href="/products#security" class="hover:text-brand-green transition-colors">安全線上防偽方案</a></li>
-          <li><a href="/products#warranty" class="hover:text-brand-green transition-colors">線上保固資訊系統</a></li>
-          <li><a href="/products#marketing" class="hover:text-brand-green transition-colors">一對一精準行銷</a></li>
-          <li><a href="/products#patent" class="hover:text-brand-green transition-colors">國家發明專利與商標</a></li>
+          <li><a href={path('/products#security')} class="hover:text-brand-green transition-colors">安全線上防偽方案</a></li>
+          <li><a href={path('/products#warranty')} class="hover:text-brand-green transition-colors">線上保固資訊系統</a></li>
+          <li><a href={path('/products#marketing')} class="hover:text-brand-green transition-colors">一對一精準行銷</a></li>
+          <li><a href={path('/products#patent')} class="hover:text-brand-green transition-colors">國家發明專利與商標</a></li>
         </ul>
       </div>
 
       <!-- Sponsorship Navigation -->
       <div class="space-y-3">
         <h4 class="text-[#1d1d1f] font-semibold text-base">
-          <a href="/sponsorship" class="hover:text-brand-green transition-colors">社服贊助</a>
+          <a href={path('/sponsorship')} class="hover:text-brand-green transition-colors">社服贊助</a>
         </h4>
         <ul class="space-y-2 text-sm font-normal text-[#6e6e73]">
-          <li><a href="/sponsorship" class="hover:text-brand-green transition-colors">相信幸福特展</a></li>
-          <li><a href="/sponsorship" class="hover:text-brand-green transition-colors">讓愛飛翔</a></li>
-          <li><a href="/sponsorship" class="hover:text-brand-green transition-colors">企業社會責任 (CSR)</a></li>
+          <li><a href={path('/sponsorship')} class="hover:text-brand-green transition-colors">相信幸福特展</a></li>
+          <li><a href={path('/sponsorship')} class="hover:text-brand-green transition-colors">讓愛飛翔</a></li>
+          <li><a href={path('/sponsorship')} class="hover:text-brand-green transition-colors">企業社會責任 (CSR)</a></li>
         </ul>
       </div>
     </div>
@@ -87,7 +89,7 @@ const currentYear = new Date().getFullYear();
     <!-- Copyright & Prominent Back-to-Top Button -->
     <div class="pt-8 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-5 text-sm font-normal text-[#6e6e73]">
       <div>
-        © <span id="copyright-year">{currentYear}</span> 端詳互動資訊有限公司 ｜ <a href="/sponsorship" class="hover:text-brand-green transition-colors underline-offset-2 hover:underline">企業社會責任</a> ｜ 服務條款 ｜ 隱私權政策
+        © <span id="copyright-year">{currentYear}</span> 端詳互動資訊有限公司 ｜ <a href={path('/sponsorship')} class="hover:text-brand-green transition-colors underline-offset-2 hover:underline">企業社會責任</a> ｜ 服務條款 ｜ 隱私權政策
       </div>
       <div>
         <a 

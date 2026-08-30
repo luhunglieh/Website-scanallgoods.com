@@ -1,11 +1,12 @@
 ---
+import { path } from '../../utils/paths';
 ---
 
 <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-28 pb-20 px-4">
   <!-- AI Consultant High-Tech Background -->
   <div class="absolute inset-0 z-0 flex items-center justify-center">
     <img 
-      src="/img/ai_hero_banner.webp" 
+      src={path('/img/ai_hero_banner.webp')} 
       alt="端詳互動資訊 AI 專家與顧問主視覺" 
       loading="eager"
       fetchpriority="high"
@@ -48,13 +49,13 @@
     <!-- CTAs linking to multi-page routes (No arrow on 探索產品資訊) -->
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a 
-        href="/services"
+        href={path('/services')}
         class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-green hover:bg-brand-green-dark text-black font-semibold text-base transition-all duration-200 shadow-md hover:scale-105 text-center"
       >
         了解服務項目
       </a>
       <a 
-        href="/products"
+        href={path('/products')}
         class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/95 hover:bg-white text-[#1d1d1f] font-semibold text-base border border-black/10 transition-all duration-200 text-center shadow-sm backdrop-blur-md"
       >
         探索產品資訊

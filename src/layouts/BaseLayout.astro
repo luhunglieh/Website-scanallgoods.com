@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
+import { path } from '../utils/paths';
 
 interface Props {
   title?: string;
@@ -15,7 +16,7 @@ const {
   currentPath = Astro.url.pathname
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://scanallgoods.com');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://luhunglieh.github.io');
 ---
 
 <!doctype html>
@@ -37,19 +38,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://scanallg
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     
     <!-- Website Multi-Format High-Res Favicon & Tab Icons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/png" href="/myicon.webp" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href={path('/favicon.ico')} />
+    <link rel="icon" type="image/png" sizes="32x32" href={path('/favicon-32x32.png')} />
+    <link rel="icon" type="image/png" sizes="16x16" href={path('/favicon-16x16.png')} />
+    <link rel="icon" type="image/png" href={path('/myicon.webp')} />
+    <link rel="apple-touch-icon" sizes="180x180" href={path('/apple-touch-icon.png')} />
+    <link rel="shortcut icon" href={path('/favicon.ico')} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://scanallgoods.com/myicon.webp" />
+    <meta property="og:image" content={new URL(path('/myicon.webp'), canonicalURL).href} />
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" is:inline>
@@ -58,8 +59,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://scanallg
         "@type": "Organization",
         "name": "端詳互動資訊有限公司",
         "taxID": "24778439",
-        "url": "https://scanallgoods.com",
-        "logo": "https://scanallgoods.com/myicon.webp",
+        "url": "https://luhunglieh.github.io/Website-scanallgoods.com/",
+        "logo": "https://luhunglieh.github.io/Website-scanallgoods.com/myicon.webp",
         "description": "提供 Agentic程式設計、AI 應用規劃、線上雲端防偽、一物一碼專利驗證、線上保固與精準行銷技術方案。"
       }
     </script>

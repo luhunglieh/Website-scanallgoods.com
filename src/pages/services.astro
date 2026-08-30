@@ -2,19 +2,20 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FiveServices from '../components/services/FiveServices.astro';
 import ClientGrid from '../components/services/ClientGrid.astro';
+import { path } from '../utils/paths';
 ---
 
 <BaseLayout 
   title="服務項目 - 端詳互動資訊 Scan All Goods" 
   description="端詳互動資訊專業服務：Agentic程式設計、跨境電商代理營運、資訊應用規劃設計、數據分析營運決策與成功合作案例。"
-  currentPath="/services"
+  currentPath={path('/services')}
 >
   <!-- Unified Extended High-End IT Conference Room Background -->
   <div class="relative overflow-hidden">
     <!-- Continuous Background: Zoomed-Out with High Clarity to see all 3 colleagues, laptops & whiteboard -->
     <div class="absolute inset-0 z-0">
       <img 
-        src="/img/services_hero_banner.webp" 
+        src={path('/img/services_hero_banner.webp')} 
         alt="端詳互動資訊專業顧問團隊與資訊專案討論" 
         loading="eager"
         fetchpriority="high"

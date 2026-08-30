@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { path } from '../utils/paths';
 
 const sponsoredProjects = [
   {
@@ -24,14 +25,14 @@ const sponsoredProjects = [
 <BaseLayout 
   title="社服贊助 - 端詳互動資訊 Scan All Goods" 
   description="端詳互動資訊企業社會責任與 Rotary 扶輪社公益合作：社服網站贊助、數位技術贊助與公益站台建置實績。"
-  currentPath="/sponsorship"
+  currentPath={path('/sponsorship')}
 >
   <!-- Unified Extended High-End Morning Park Community Service Background -->
   <div class="relative overflow-hidden">
     <!-- Continuous Background -->
     <div class="absolute inset-0 z-0">
       <img 
-        src="/img/sponsorship_hero_banner.webp" 
+        src={path('/img/sponsorship_hero_banner.webp')} 
         alt="公園戶外晨光社會服務、關懷長者與正前方拉不拉多犬" 
         loading="eager"
         fetchpriority="high"
@@ -90,7 +91,7 @@ const sponsoredProjects = [
           >
             <!-- Rotary Blue Capsule: Official User Specified rotary-white-logo.svg -->
             <div class="inline-flex items-center gap-3 mb-4 px-4 py-2 rounded-full bg-[#005DAA] shadow-md">
-              <img src="/img/rotary-white-logo.svg" alt="Rotary" class="h-6 sm:h-7 w-auto object-contain" />
+              <img src={path('/img/rotary-white-logo.svg')} alt="Rotary" class="h-6 sm:h-7 w-auto object-contain" />
               <span class="text-sm sm:text-base text-white font-bold tracking-wide">
                 社會服務 · 技術贊助
               </span>

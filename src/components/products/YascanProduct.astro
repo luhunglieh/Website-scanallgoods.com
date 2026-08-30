@@ -1,9 +1,11 @@
 ---
+import { path } from '../../utils/paths';
+
 const screenshots = [
-  { img: '/img/screenShoot1.webp', alt: '防偽掃描與即時驗證', rotate: '-rotate-3 hover:rotate-0', translate: 'sm:-translate-y-4', zIndex: 'z-10' },
-  { img: '/img/screenShoot2.webp', alt: '數位產品履歷與保固', rotate: 'rotate-2 hover:rotate-0', translate: 'sm:translate-y-6', zIndex: 'z-20' },
-  { img: '/img/screenShoot3.webp', alt: '倒數提醒與通知推播', rotate: '-rotate-2 hover:rotate-0', translate: 'sm:-translate-y-2', zIndex: 'z-10' },
-  { img: '/img/screenShoot4.webp', alt: '精準行銷與顧客互動', rotate: 'rotate-3 hover:rotate-0', translate: 'sm:translate-y-4', zIndex: 'z-20' },
+  { img: path('/img/screenShoot1.webp'), alt: '防偽掃描與即時驗證', rotate: '-rotate-3 hover:rotate-0', translate: 'sm:-translate-y-4', zIndex: 'z-10' },
+  { img: path('/img/screenShoot2.webp'), alt: '數位產品履歷與保固', rotate: 'rotate-2 hover:rotate-0', translate: 'sm:translate-y-6', zIndex: 'z-20' },
+  { img: path('/img/screenShoot3.webp'), alt: '倒數提醒與通知推播', rotate: '-rotate-2 hover:rotate-0', translate: 'sm:-translate-y-2', zIndex: 'z-10' },
+  { img: path('/img/screenShoot4.webp'), alt: '精準行銷與顧客互動', rotate: 'rotate-3 hover:rotate-0', translate: 'sm:translate-y-4', zIndex: 'z-20' },
 ];
 ---
 
@@ -60,11 +62,11 @@ const screenshots = [
                 <img 
                   src={s.img} 
                   alt={s.alt} 
-                  class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300" 
+                  class="w-full h-auto object-cover rounded-[1.8rem] shadow-inner group-hover:scale-105 transition-transform duration-300" 
                 />
               </div>
               <div class="pt-3 pb-1 text-center">
-                <span class="text-xs font-semibold text-[#6e6e73] group-hover:text-brand-green transition-colors">
+                <span class="text-xs font-semibold text-[#1d1d1f]">
                   {s.alt}
                 </span>
               </div>

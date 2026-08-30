@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://scanallgoods.com',
+  site: 'https://luhunglieh.github.io',
+  base: '/Website-scanallgoods.com',
   integrations: [
     tailwind({
       applyBaseStyles: false,

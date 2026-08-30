@@ -1,19 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactSection from '../components/contact/ContactSection.astro';
+import { path } from '../utils/paths';
 ---
 
 <BaseLayout 
   title="聯絡資訊 - 端詳互動資訊 Scan All Goods" 
   description="端詳互動資訊聯絡方式：10457 臺北市中山區南京東路二段101號9樓，服務信箱 service@scanallgoods.com。"
-  currentPath="/contact"
+  currentPath={path('/contact')}
 >
   <!-- Unified Extended High-End Reception Office Background (100% Identical to Services Page Standard) -->
   <div class="relative overflow-hidden">
     <!-- Continuous Background: Scale-100 (No Distortion), Crisp & High Clarity -->
     <div class="absolute inset-0 z-0">
       <img 
-        src="/img/contact_hero_banner.webp" 
+        src={path('/img/contact_hero_banner.webp')} 
         alt="端詳互動資訊接待大廳與辦公空間" 
         loading="eager"
         fetchpriority="high"

@@ -1,5 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { path } from '../../utils/paths';
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -23,7 +25,7 @@ const t = useTranslations(lang);
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
       <div class="apple-card p-8 rounded-3xl text-center flex flex-col items-center justify-center group">
         <div class="w-20 h-20 mb-6 flex items-center justify-center">
-          <img src="/img/3-col-icons-web.webp" alt="RWD Design" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" />
+          <img src={path('/img/3-col-icons-web.webp')} alt="RWD Design" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" />
         </div>
         <h3 class="text-lg sm:text-xl font-semibold text-[#1d1d1f] dark:text-white mb-2">
           {t('about.col1')}
@@ -35,7 +37,7 @@ const t = useTranslations(lang);
 
       <div class="apple-card p-8 rounded-3xl text-center flex flex-col items-center justify-center group">
         <div class="w-20 h-20 mb-6 flex items-center justify-center">
-          <img src="/img/3-col-icons-android.webp" alt="Google" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" />
+          <img src={path('/img/3-col-icons-android.webp')} alt="Google" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" />
         </div>
         <h3 class="text-lg sm:text-xl font-semibold text-[#1d1d1f] dark:text-white mb-2">
           {t('about.col2')}
@@ -47,7 +49,7 @@ const t = useTranslations(lang);
 
       <div class="apple-card p-8 rounded-3xl text-center flex flex-col items-center justify-center group">
         <div class="w-20 h-20 mb-6 flex items-center justify-center">
-          <img src="/img/3-col-icons-iphone.webp" alt="Apple iOS" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" />
+          <img src={path('/img/3-col-icons-iphone.webp')} alt="Apple iOS" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" />
         </div>
         <h3 class="text-lg sm:text-xl font-semibold text-[#1d1d1f] dark:text-white mb-2">
           {t('about.col3')}
