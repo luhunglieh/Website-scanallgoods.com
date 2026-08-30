@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FiveServices from '../components/services/FiveServices.astro';
+import ClientGrid from '../components/services/ClientGrid.astro';
+---
+
+<BaseLayout 
+  title="服務項目 - 端詳互動資訊 Scan All Goods" 
+  description="端詳互動資訊專業服務：Agentic程式設計、跨境電商代理營運、資訊應用規劃設計、數據分析營運決策與成功合作案例。"
+  currentPath="/services"
+>
+  <!-- Unified Extended High-End IT Conference Room Background -->
+  <div class="relative overflow-hidden">
+    <!-- Continuous Background: Zoomed-Out with High Clarity to see all 3 colleagues, laptops & whiteboard -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="/img/services_hero_banner.webp" 
+        alt="端詳互動資訊專業顧問團隊與資訊專案討論" 
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="w-full h-full object-cover object-[50%_8%] sm:object-[50%_5%] lg:object-top scale-100 opacity-95"
+      />
+      <!-- Crystal clear ambient gradient overlay (Lower transparency/less foggy) -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#f5f5f7]/10 via-[#f5f5f7]/20 to-[#f5f5f7]"></div>
+    </div>
+
+    <!-- Generous Top Spacing: Zoomed-out stage showcasing all 3 people, whiteboard, laptops and green trees -->
+    <div class="relative z-10 pt-60 sm:pt-72 md:pt-80 lg:pt-96"></div>
+
+    <!-- 4 專業服務項目 (Frosted glass cards floating gracefully over the extended background) -->
+    <div class="relative z-10 pb-16">
+      <FiveServices />
+    </div>
+  </div>
+
+  <!-- 成功合作案例 -->
+  <ClientGrid />
+</BaseLayout>

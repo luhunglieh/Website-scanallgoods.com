@@ -1,0 +1,83 @@
+---
+import '../styles/global.css';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  currentPath?: string;
+}
+
+const { 
+  title = "端詳互動資訊 Scan All Goods - Agentic程式設計 · 雲端防偽 · 保固服務 · 1對1精準行銷", 
+  description = "端詳互動資訊團隊具備 Agentic程式設計、AI 應用規劃、電商代營運與資料分析實戰能力。國家發明專利一物一碼驗證機制，提供全方位售後服務與熟客經營促進回購。",
+  currentPath = Astro.url.pathname
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://scanallgoods.com');
+---
+
+<!doctype html>
+<html lang="zh-TW" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Security & Privacy Meta Tags (Anti-Clickjacking X-Frame-Options) -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- DNS Preconnect for Google Services -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    
+    <!-- Website Multi-Format High-Res Favicon & Tab Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" href="/myicon.webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://scanallgoods.com/myicon.webp" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "端詳互動資訊有限公司",
+        "taxID": "24778439",
+        "url": "https://scanallgoods.com",
+        "logo": "https://scanallgoods.com/myicon.webp",
+        "description": "提供 Agentic程式設計、AI 應用規劃、線上雲端防偽、一物一碼專利驗證、線上保固與精準行銷技術方案。"
+      }
+    </script>
+
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VT6V40H3SC"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VT6V40H3SC');
+    </script>
+  </head>
+  <body class="antialiased flex flex-col min-h-screen bg-apple-bg text-apple-text">
+    <Header currentPath={currentPath} />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

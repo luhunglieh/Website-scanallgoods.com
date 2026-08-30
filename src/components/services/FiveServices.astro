@@ -1,0 +1,92 @@
+---
+const services = [
+  {
+    id: 'agentic',
+    title: 'Agentic程式設計',
+    tag: '服務項目 01',
+    accentColor: 'border-l-4 border-brand-green',
+    icon: '/img/icon_agentic_robot.webp',
+    zoomClass: 'scale-110',
+    desc: '端詳互動資訊團隊成員擁有 AI 應用規劃、Agentic 智慧代理程式設計、資訊服務顧問、電商代理營運、資料分析的實務經驗與能力。憑藉高效的執行能力、豐富的多平台實務經驗，即能在商務合作的過程中預作設想，協助您的企業降低風險與成本、提升獲利。',
+    platforms: [
+      { name: '響應式網頁設計 (RWD)', icon: '/img/3-col-icons-web.webp', zoom: 'scale-110' },
+      { name: 'Google 雲端與 Android 生態', icon: '/img/icon_android_clean.webp', zoom: 'scale-110' },
+      { name: 'Apple iOS 行動裝置系統', icon: '/img/icon_apple_clean.webp', zoom: 'scale-110' },
+    ]
+  },
+  {
+    id: 'ecommerce',
+    title: '跨境電商代理營運',
+    tag: '服務項目 02',
+    accentColor: 'border-l-4 border-brand-blue',
+    icon: '/img/service1.webp',
+    zoomClass: 'scale-150',
+    desc: '我們是實際販賣商品的代理營運商，熟悉 Amazon 跨境電商平台的規定與操作，同時瞭解各國海關規定、交易收款與物流配送方式。亦可協助操作社群廣告，並根據統計數字，提供企業邁向全球銷售的建議。'
+  },
+  {
+    id: 'it-consulting',
+    title: '資訊應用規劃設計',
+    tag: '服務項目 03',
+    accentColor: 'border-l-4 border-brand-green',
+    icon: '/img/service3.webp',
+    zoomClass: 'scale-115',
+    desc: '我們因應企業需求客製專屬資訊系統，滿足商務應用並提供管理所需的報表，以提升企業效能進而增加營運獲利。並能排除各系統間的壁壘進行資料整合與匯流，優化數據資料與報表以增益跨單位間的合作。'
+  },
+  {
+    id: 'data-analysis',
+    title: '數據分析營運決策',
+    tag: '服務項目 04',
+    accentColor: 'border-l-4 border-brand-orange',
+    icon: '/img/service4.webp',
+    zoomClass: 'scale-115',
+    desc: '我們跟隨企業深入了解業務範疇，將其作業流程中的資料加以探討、研究，如商品製程的成分分析、顧客瀏覽喜好統計、顧客樣貌與消費分析...，搭配產業獨有的數據模型，提供圖像化利器輔助高階主管決策。'
+  }
+];
+---
+
+<section id="five-services" class="py-6 bg-transparent scroll-mt-28 sm:scroll-mt-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Services Cards List with Unified Top Tag Font Size -->
+    <div class="space-y-6 sm:space-y-8 max-w-5xl mx-auto">
+      {services.map(s => (
+        <div id={s.id} class={`apple-card ${s.accentColor} bg-white/95 backdrop-blur-xl p-5 sm:p-8 md:p-10 rounded-3xl shadow-lg border border-white/80 scroll-mt-28 sm:scroll-mt-32 overflow-hidden`}>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-5 sm:mb-6">
+            <div class="flex items-center gap-4 sm:gap-5 min-w-0 max-w-full">
+              <!-- Responsive Pure White Icon Wrapper -->
+              <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-2xl bg-white p-2 flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
+                <img src={s.icon} alt={s.title} class={`w-full h-full object-contain ${s.zoomClass}`} />
+              </div>
+              <div class="min-w-0">
+                <!-- Unified Tag Typography (Matching Sponsorship Page text-sm sm:text-base font-mono font-bold) -->
+                <span class="text-sm sm:text-base font-mono font-bold text-brand-green tracking-wide block mb-1">
+                  {s.tag}
+                </span>
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#1d1d1f] break-words">
+                  {s.title}
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-[#424245] text-sm sm:text-base md:text-lg font-normal leading-relaxed text-justify mb-5 sm:mb-6">
+            {s.desc}
+          </p>
+
+          <!-- Platforms for Agentic service -->
+          {s.platforms && (
+            <div class="mt-5 pt-5 sm:mt-6 sm:pt-6 border-t border-black/5 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+              {s.platforms.map(p => (
+                <div class="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-white shadow-sm overflow-hidden min-w-0">
+                  <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden p-1">
+                    <img src={p.icon} alt={p.name} class={`w-full h-full object-contain ${p.zoom}`} />
+                  </div>
+                  <span class="text-xs sm:text-sm font-semibold text-[#1d1d1f] leading-snug break-words">{p.name}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

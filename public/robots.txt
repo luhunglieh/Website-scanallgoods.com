@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow private staging or search test paths
+Disallow: /nogooglebot/
+Disallow: /beta/
+Disallow: /development/
+Disallow: /pr/
+Disallow: /search/
+
+# Sitemaps
+Sitemap: https://scanallgoods.com/sitemap-index.xml
+Sitemap: https://www.scanallgoods.com/sitemap.xml

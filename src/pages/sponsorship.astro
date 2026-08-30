@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const sponsoredProjects = [
+  {
+    id: 'believe-expo',
+    title: '相信幸福特展',
+    tag: '社服贊助 01',
+    url: 'https://luhunglieh.github.io/believe-in-happiness-expo/',
+    desc: '傳遞溫暖、希望與社會正向能量的公益特展線上互動站台。透過現代化網頁設計，將幸福與善念無遠弗屆地分享給大眾。',
+    accentColor: 'border-l-4 border-brand-green'
+  },
+  {
+    id: 'let-love-fly',
+    title: '讓愛飛翔',
+    tag: '社服贊助 02',
+    url: 'https://luhunglieh.github.io/let-love-fly/',
+    desc: '匯聚社會愛心、推廣關懷弱勢與志工服務的公益平臺。讓每一份關懷與愛心如翼飛翔，溫暖社會上每一個需要被看見的角落。',
+    accentColor: 'border-l-4 border-brand-blue'
+  }
+];
+---
+
+<BaseLayout 
+  title="社服贊助 - 端詳互動資訊 Scan All Goods" 
+  description="端詳互動資訊企業社會責任與 Rotary 扶輪社公益合作：社服網站贊助、數位技術贊助與公益站台建置實績。"
+  currentPath="/sponsorship"
+>
+  <!-- Unified Extended High-End Morning Park Community Service Background -->
+  <div class="relative overflow-hidden">
+    <!-- Continuous Background -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="/img/sponsorship_hero_banner.webp" 
+        alt="公園戶外晨光社會服務、關懷長者與正前方拉不拉多犬" 
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="w-full h-full object-cover object-[50%_8%] sm:object-[50%_5%] lg:object-top scale-100 opacity-95"
+      />
+      <!-- Crystal clear ambient gradient overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#f5f5f7]/10 via-[#f5f5f7]/20 to-[#f5f5f7]"></div>
+    </div>
+
+    <!-- Generous Top Spacing: Showcasing dog & senior -->
+    <div class="relative z-10 pt-60 sm:pt-72 md:pt-80 lg:pt-96"></div>
+
+    <!-- Vertically Stacked Cards (Ultra Slim Width) -->
+    <div class="relative z-10 pb-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-[340px] sm:max-w-[380px] mr-auto space-y-4">
+          <!-- 1 號資訊卡與 2 號資訊卡 -->
+          {sponsoredProjects.map(p => (
+            <div 
+              id={p.id} 
+              class={`apple-card ${p.accentColor} p-5 sm:p-6 rounded-3xl flex flex-col justify-between bg-white/95 backdrop-blur-xl border border-white/80 shadow-lg group scroll-mt-96 target:ring-2 target:ring-brand-green target:border-brand-green target:shadow-xl transition-all duration-300`}
+            >
+              <div>
+                <div class="mb-2">
+                  <span class="text-sm sm:text-base font-mono font-bold text-brand-green tracking-wide">
+                    {p.tag}
+                  </span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-[#1d1d1f] mb-2 group-hover:text-brand-green transition-colors">
+                  {p.title}
+                </h3>
+                <p class="text-[#424245] text-xs sm:text-sm font-normal leading-relaxed text-justify mb-4">
+                  {p.desc}
+                </p>
+              </div>
+
+              <div class="pt-3 border-t border-black/5">
+                <a 
+                  href={p.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="w-full py-2 rounded-full bg-[#1d1d1f] hover:bg-black text-white font-semibold text-center transition-all shadow-md flex items-center justify-center gap-1.5 group-hover:bg-brand-green group-hover:text-black text-xs sm:text-sm"
+                >
+                  <span>前往參訪站台</span>
+                  <span>&rarr;</span>
+                </a>
+              </div>
+            </div>
+          ))}
+
+          <!-- 3 號 CSR 卡片 -->
+          <div 
+            id="csr" 
+            class="apple-card p-6 sm:p-7 rounded-3xl bg-white/95 backdrop-blur-xl border border-white/80 text-left shadow-lg scroll-mt-96 target:ring-2 target:ring-brand-green target:border-brand-green target:shadow-xl transition-all duration-300"
+          >
+            <!-- Rotary Blue Capsule: Official User Specified rotary-white-logo.svg -->
+            <div class="inline-flex items-center gap-3 mb-4 px-4 py-2 rounded-full bg-[#005DAA] shadow-md">
+              <img src="/img/rotary-white-logo.svg" alt="Rotary" class="h-6 sm:h-7 w-auto object-contain" />
+              <span class="text-sm sm:text-base text-white font-bold tracking-wide">
+                社會服務 · 技術贊助
+              </span>
+            </div>
+
+            <h3 class="text-lg sm:text-xl font-bold text-[#1d1d1f] mb-2">
+              企業社會責任與公益初衷
+            </h3>
+            <p class="text-[#424245] text-xs sm:text-sm font-normal leading-relaxed text-justify">
+              端詳互動資訊堅信企業的價值在於為社會創造正向永續的連結。我們持續結合 Rotary 扶輪社友善力量，為致力於教育改善、疾病防治、生態保護與社會關懷的非營利組織提供專業、高品質的技術顧問服務贊助。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

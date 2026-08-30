@@ -1,0 +1,61 @@
+---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="about" class="py-24 bg-[#ffffff] dark:bg-[#0c0c0d] transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-4xl mx-auto mb-16">
+      <span class="text-xs font-semibold text-brand-green bg-brand-green/10 px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-3">
+        服務項目 · 團隊背景
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-bold text-[#1d1d1f] dark:text-white tracking-tight mb-4">
+        {t('about.title')}
+      </h2>
+      <div class="w-16 h-1 bg-brand-green mx-auto mb-8 rounded-full"></div>
+      <p class="text-[#424245] dark:text-[#d1d1d6] text-base sm:text-lg font-normal leading-relaxed text-justify sm:text-center">
+        {t('about.desc')}
+      </p>
+    </div>
+
+    <!-- 3-Column Platforms Showcase (RWD, Google, iOS) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      <div class="apple-card p-8 rounded-3xl text-center flex flex-col items-center justify-center group">
+        <div class="w-20 h-20 mb-6 flex items-center justify-center">
+          <img src="/img/3-col-icons-web.webp" alt="RWD Design" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" />
+        </div>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#1d1d1f] dark:text-white mb-2">
+          {t('about.col1')}
+        </h3>
+        <p class="text-[#6e6e73] dark:text-apple-darkmuted text-sm sm:text-base font-normal leading-relaxed">
+          跨裝置自適應響應式架構，提供極致瀏覽體驗
+        </p>
+      </div>
+
+      <div class="apple-card p-8 rounded-3xl text-center flex flex-col items-center justify-center group">
+        <div class="w-20 h-20 mb-6 flex items-center justify-center">
+          <img src="/img/3-col-icons-android.webp" alt="Google" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" />
+        </div>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#1d1d1f] dark:text-white mb-2">
+          {t('about.col2')}
+        </h3>
+        <p class="text-[#6e6e73] dark:text-apple-darkmuted text-sm sm:text-base font-normal leading-relaxed">
+          全面支援 Android 應用生態與 Google 雲端架構
+        </p>
+      </div>
+
+      <div class="apple-card p-8 rounded-3xl text-center flex flex-col items-center justify-center group">
+        <div class="w-20 h-20 mb-6 flex items-center justify-center">
+          <img src="/img/3-col-icons-iphone.webp" alt="Apple iOS" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" />
+        </div>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#1d1d1f] dark:text-white mb-2">
+          {t('about.col3')}
+        </h3>
+        <p class="text-[#6e6e73] dark:text-apple-darkmuted text-sm sm:text-base font-normal leading-relaxed">
+          精準對接 Apple iOS 行動系統與高品質體驗
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

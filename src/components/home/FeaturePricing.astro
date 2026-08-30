@@ -1,0 +1,244 @@
+---
+const plans = [
+  {
+    id: 'security',
+    tag: '安全防偽',
+    title: '安全線上防偽',
+    subtitle: '原廠正品守護 · 雲端動態驗證',
+    badgeBg: 'bg-[#BB5466]/10 text-[#BB5466]',
+    features: [
+      '只與注重品牌的原廠合作',
+      '只保障高品質的原廠商品',
+      '一物一專屬防偽安全碼',
+      '微軟雲端機房高穩定安全',
+      '客戶免下載安裝一鍵完成'
+    ]
+  },
+  {
+    id: 'warranty',
+    tag: '線上保固',
+    title: '線上保固資訊',
+    subtitle: '數位保固歷程 · 售後無紙化',
+    badgeBg: 'bg-brand-green/10 text-brand-green',
+    features: [
+      '線上即時回應購買商品資訊',
+      '線上主動提醒商品保固期限',
+      '使用說明與手冊無紙化雲端存取',
+      '客戶能一鍵直連官方電商 App',
+      '售後紀錄雲端防偽存證無可篡改'
+    ]
+  },
+  {
+    id: 'marketing',
+    tag: '精準行銷',
+    title: '一對一精準行銷',
+    subtitle: '提升熟客回購 · 顧客終身價值',
+    badgeBg: 'bg-brand-blue/10 text-brand-blue',
+    features: [
+      '客戶服務數量沒有上限限制',
+      '貼心售後提醒贏得客戶好評',
+      '與消費者直接建立互動管道',
+      '適時的新品上市推播通知',
+      '驚艷的專屬回購折扣消息'
+    ]
+  }
+];
+
+const miniScreenshots = [
+  '/img/screenShoot1.webp',
+  '/img/screenShoot2.webp',
+  '/img/screenShoot3.webp',
+  '/img/screenShoot4.webp'
+];
+---
+
+<section id="pricing" class="py-4 bg-transparent scroll-mt-24 sm:scroll-mt-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Mobile Interactive Slider -->
+    <div class="md:hidden max-w-sm mx-auto relative">
+      <div id="mobile-card-carousel" class="overflow-hidden relative rounded-3xl">
+        <div id="mobile-cards-track" class="flex transition-transform duration-300 ease-out">
+          {plans.map((p, idx) => (
+            <div id={`m-${p.id}`} class="w-full shrink-0 px-1 scroll-mt-24">
+              <div class="apple-card p-6 rounded-3xl flex flex-col justify-between bg-white/95 backdrop-blur-xl border border-white/80 shadow-lg min-h-[220px]">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <!-- Unified Tag Size: text-sm sm:text-base font-bold -->
+                    <span class={`text-sm sm:text-base font-bold px-3.5 py-1 rounded-full ${p.badgeBg} tracking-wide`}>
+                      {p.tag}
+                    </span>
+                    <span class="text-sm text-[#86868b] font-mono font-semibold">
+                      0{idx + 1} / 03
+                    </span>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#1d1d1f] mb-1">
+                    {p.title}
+                  </h3>
+                  <p class="text-xs text-[#6e6e73] font-normal mb-3 leading-relaxed">
+                    {p.subtitle}
+                  </p>
+
+                  <ul class="space-y-2 border-t border-black/5 pt-3">
+                    {p.features.map(f => (
+                      <li class="flex items-start gap-2 text-xs font-normal text-[#1d1d1f]">
+                        <svg class="w-3.5 h-3.5 text-brand-green shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="flex items-center justify-between mt-3 px-2">
+        <button 
+          id="prev-card-btn" 
+          aria-label="上一張資訊卡"
+          class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md border border-black/5 shadow-md flex items-center justify-center text-[#1d1d1f] active:scale-95 transition-transform"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <div class="flex items-center gap-2">
+          <button class="card-dot w-6 h-1.5 rounded-full bg-brand-green transition-all" data-idx="0"></button>
+          <button class="card-dot w-2 h-1.5 rounded-full bg-black/20 transition-all" data-idx="1"></button>
+          <button class="card-dot w-2 h-1.5 rounded-full bg-black/20 transition-all" data-idx="2"></button>
+        </div>
+
+        <button 
+          id="next-card-btn" 
+          aria-label="下一張資訊卡"
+          class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md border border-black/5 shadow-md flex items-center justify-center text-[#1d1d1f] active:scale-95 transition-transform"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Desktop Grid -->
+    <div class="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch max-w-7xl mx-auto">
+      {plans.map(p => (
+        <div id={p.id} class="apple-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between bg-white/95 backdrop-blur-xl border border-white/80 shadow-lg group scroll-mt-24 sm:scroll-mt-28">
+          <div>
+            <!-- Unified Tag Size: text-sm sm:text-base font-bold -->
+            <div class="mb-3.5">
+              <span class={`text-sm sm:text-base font-bold px-3.5 py-1 rounded-full ${p.badgeBg} tracking-wide inline-block`}>
+                {p.tag}
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-[#1d1d1f] mb-1.5 group-hover:text-brand-green transition-colors">
+              {p.title}
+            </h3>
+            <p class="text-xs text-[#6e6e73] font-normal mb-5 leading-relaxed">
+              {p.subtitle}
+            </p>
+
+            <ul class="space-y-2.5 border-t border-black/5 pt-4">
+              {p.features.map(f => (
+                <li class="flex items-start gap-2 text-xs sm:text-sm font-normal text-[#1d1d1f] leading-snug">
+                  <svg class="w-3.5 h-3.5 text-brand-green shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+
+      <!-- 4th Card: Ya!Scan 行動 App -->
+      <div id="mobile-app" class="apple-card p-6 sm:p-7 rounded-3xl hidden lg:flex flex-col justify-between bg-white/95 backdrop-blur-xl border border-white/80 shadow-lg group scroll-mt-24 sm:scroll-mt-28">
+        <div>
+          <!-- Unified Tag Size: text-sm sm:text-base font-bold -->
+          <div class="mb-3">
+            <span class="text-sm sm:text-base font-bold px-3.5 py-1 rounded-full bg-brand-orange/10 text-brand-orange tracking-wide inline-block">
+              App 系統介面
+            </span>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-[#1d1d1f] mb-1 group-hover:text-brand-green transition-colors">
+            Ya!Scan 行動 App
+          </h3>
+          <p class="text-xs text-[#6e6e73] font-normal mb-3.5 leading-relaxed">
+            原廠驗證 · 數位產品保固歷程
+          </p>
+
+          <!-- Micro 4-Screenshots Cluster -->
+          <div class="grid grid-cols-2 gap-2 p-2.5 rounded-2xl bg-[#f5f5f7] border border-black/5">
+            {miniScreenshots.map((imgSrc, i) => (
+              <div class="rounded-lg overflow-hidden bg-white shadow-sm border border-black/5 aspect-[3/4] flex items-center justify-center p-0.5">
+                <img 
+                  src={imgSrc} 
+                  alt={`App Preview ${i+1}`} 
+                  class="w-full h-full object-cover object-top rounded" 
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mobile Touch Swipe & Arrow Script -->
+<script is:inline>
+  (function() {
+    let currentIdx = 0;
+    const totalCards = 3;
+    const track = document.getElementById('mobile-cards-track');
+    const dots = document.querySelectorAll('.card-dot');
+    const prevBtn = document.getElementById('prev-card-btn');
+    const nextBtn = document.getElementById('next-card-btn');
+    const carousel = document.getElementById('mobile-card-carousel');
+
+    function updateCarousel(idx) {
+      currentIdx = (idx + totalCards) % totalCards;
+      if (track) {
+        track.style.transform = `translateX(-${currentIdx * 100}%)`;
+      }
+      dots.forEach((dot, i) => {
+        if (i === currentIdx) {
+          dot.className = 'card-dot w-6 h-1.5 rounded-full bg-brand-green transition-all';
+        } else {
+          dot.className = 'card-dot w-2 h-1.5 rounded-full bg-black/20 transition-all';
+        }
+      });
+    }
+
+    prevBtn?.addEventListener('click', () => updateCarousel(currentIdx - 1));
+    nextBtn?.addEventListener('click', () => updateCarousel(currentIdx + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => updateCarousel(i)));
+
+    // Touch Swipe Support
+    let startX = 0;
+    let endX = 0;
+
+    carousel?.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    carousel?.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          updateCarousel(currentIdx + 1);
+        } else {
+          updateCarousel(currentIdx - 1);
+        }
+      }
+    }, { passive: true });
+  })();
+</script>

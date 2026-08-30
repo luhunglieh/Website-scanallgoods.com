@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeaturePricing from '../components/home/FeaturePricing.astro';
+import PatentShowcase from '../components/home/PatentShowcase.astro';
+---
+
+<BaseLayout 
+  title="產品資訊 - 端詳互動資訊 Scan All Goods" 
+  description="端詳互動資訊產品資訊：Ya!Scan 雲端防偽與保固系統、安全線上防偽、線上保固資訊、一對一精準行銷與國家發明專利 I625685號。"
+  currentPath="/products"
+>
+  <!-- Unified Extended High-Tech Automotive Factory Background -->
+  <div class="relative overflow-hidden">
+    <!-- Continuous Background: Anchored on the Foreground Component & QR Code -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="/img/products_hero_banner.webp" 
+        alt="汽車高度自動化產線與一物一碼防偽零件" 
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="w-full h-full object-cover object-[50%_75%] sm:object-[50%_65%] lg:object-[50%_45%] scale-100 sm:scale-105"
+      />
+      <!-- Soft ambient gradient overlays -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#f5f5f7]/20 via-[#f5f5f7]/10 to-transparent"></div>
+    </div>
+
+    <!-- Compact Top Spacing -->
+    <div class="relative z-10 pt-24 sm:pt-32"></div>
+
+    <!-- Ya!Scan 核心功能 (Mobile: Single-height horizontal swipe stack; Desktop: 4 parallel cards) -->
+    <div class="relative z-10">
+      <FeaturePricing />
+    </div>
+
+    <!-- Dedicated Open Visual Stage: Guaranteed 100% Unobstructed Exposure of QR-Coded Component on Mobile & Desktop -->
+    <div class="relative z-10 h-72 sm:h-96 md:h-[450px] pointer-events-none"></div>
+  </div>
+
+  <!-- 國家專利認證 (Clean white separation below the QR code component stage) -->
+  <PatentShowcase />
+</BaseLayout>

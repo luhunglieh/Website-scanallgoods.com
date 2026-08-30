@@ -1,0 +1,103 @@
+---
+const navLinks = [
+  { href: '/services', label: '服務項目' },
+  { href: '/products', label: '產品資訊' },
+  { href: '/sponsorship', label: '社服贊助' },
+  { href: '/contact', label: '聯絡資訊' },
+];
+
+const { currentPath = '/' } = Astro.props;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#ffffff]/85 backdrop-blur-xl border-b border-black/5 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Brand Logo (Click leads to Home, Chinese Title as Primary) -->
+    <a href="/" class="flex items-center gap-3.5 group">
+      <img src="/img/myicon.webp" alt="端詳互動資訊 Logo" class="w-9 h-9 object-contain" />
+      <div class="flex flex-col">
+        <!-- Main Primary Title: Chinese -->
+        <span class="font-bold text-lg tracking-tight text-[#1d1d1f] group-hover:text-brand-green transition-colors leading-tight">
+          端詳互動資訊
+        </span>
+        <!-- Secondary Subtitle: English -->
+        <span class="text-xs text-[#86868b] font-medium tracking-wide leading-tight">
+          Scan All Goods
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-8">
+      {navLinks.map(link => {
+        const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+        return (
+          <a
+            href={link.href}
+            class={`text-sm font-medium transition-colors duration-200 py-1 border-b-2 ${
+              isActive
+                ? 'text-brand-green border-brand-green font-semibold'
+                : 'text-[#424245] border-transparent hover:text-brand-green hover:border-brand-green/30'
+            }`}
+          >
+            {link.label}
+          </a>
+        );
+      })}
+    </nav>
+
+    <!-- Mobile Menu Button (Hamburger) -->
+    <button 
+      id="mobile-menu-btn"
+      aria-label="開啟導覽選單"
+      class="md:hidden p-2 rounded-2xl bg-black/5 hover:bg-black/10 transition-colors"
+    >
+      <svg id="menu-icon-open" class="w-6 h-6 text-[#1d1d1f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="menu-icon-close" class="w-6 h-6 text-[#1d1d1f]" hidden class="w-6 h-6 text-[#1d1d1f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu-drawer" class="md:hidden hidden bg-white/95 backdrop-blur-2xl border-b border-black/10 px-6 py-6 transition-all duration-300">
+    <nav class="flex flex-col space-y-4">
+      {navLinks.map(link => {
+        const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+        return (
+          <a
+            href={link.href}
+            class={`text-base font-semibold py-2 px-3 rounded-xl transition-colors ${
+              isActive
+                ? 'bg-brand-green/10 text-brand-green'
+                : 'text-[#1d1d1f] hover:bg-black/5'
+            }`}
+          >
+            {link.label}
+          </a>
+        );
+      })}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const drawer = document.getElementById('mobile-menu-drawer');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  btn?.addEventListener('click', () => {
+    const isHidden = drawer?.classList.contains('hidden');
+    if (isHidden) {
+      drawer?.classList.remove('hidden');
+      iconOpen?.classList.add('hidden');
+      iconClose?.classList.remove('hidden');
+    } else {
+      drawer?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    }
+  });
+</script>

@@ -1,0 +1,133 @@
+---
+const clientsWithDesc = [
+  {
+    name: '仰發科技',
+    img: '/img/meet8.webp',
+    url: 'https://www.yanfa.com.tw/',
+    desc: '《仰發科技》營運項目以銷售功率元件與IC產品為主，藉由專業經營能力取得眾多國際品牌代理與經銷，客戶群主要是PC週邊、消費性電子產品、醫療應用產品、IOT應用產品'
+  },
+  {
+    name: '臺灣藍鵲茶',
+    img: '/img/meet7.webp',
+    desc: '致力以「流域收復」策略，推動「無農藥生態村」友善環境農業的企業，為推動生態AIoT與農學共存之里山生態，推出全為坪林產出、友善方式栽培、科技監控護育的茶品'
+  },
+  {
+    name: '楓樹窩石虎米',
+    img: '/img/meet6.webp',
+    desc: '同樣以「流域收復」策略，創造地方品牌，活化當地讓社區的生態與經濟找到平衡點，我們的自有產品 Ya!Scan 為每一位農民每一包米提供產品履歷與防偽機制'
+  },
+  {
+    name: '商業周刊',
+    img: '/img/meet5.webp',
+    desc: '《商周集團》求真求實、開放共創，連結知識、人脈致力成為知識工作者最佳的學習夥伴，近年銷售管道多元資料大量彙集，數據儀表板全力協助營運與執行'
+  },
+  {
+    name: '錦祥集團',
+    img: '/img/meet1.webp',
+    desc: '錦祥集團為兩岸紗線一線企業，近年來著力於原料、成衣紡織之研發設計，除原有ERP系統外更導入智能知識平台，全力邁向數位資訊匯流、B2B線上商務與大數據分析的未來'
+  },
+  {
+    name: '肯瑪動力',
+    img: '/img/meet2.webp',
+    desc: '來自臺灣的 KINUGAWA 為渦輪製造與外銷企業，位於台中汽車零組件重鎮，近年結合當地各大廠著力電子商務發展與應用，藉由Amazon、eBay 等世界級流量電商平台營運銷售'
+  },
+  {
+    name: '中華三菱',
+    img: '/img/meet3.webp',
+    desc: '我們的自有產品 Ya!Scan app 參與中華三菱2016青春還鄉系列活動，以行動化線上服務協助台南後壁鄉數十間在地商家行銷，響應中華三菱號召有志向、理想的熱血勵青返鄉創業'
+  },
+  {
+    name: '三笑楽酒造株式会社',
+    img: '/img/meet4.webp',
+    desc: '我們新創的產品 Ya!Scan app 參與三笑楽於國際世貿中心的策展活動，app 初上市即與國際企業合作，為每一位消費者提供行動化線上服務包含清酒飲用方法、保存提醒與新品通知'
+  }
+];
+
+const institutionalClients = [
+  {
+    name: '合庫人壽',
+    img: '/img/meet91.png'
+  },
+  {
+    name: '臺灣金服',
+    img: '/img/meet92.png'
+  },
+  {
+    name: '財政部國有財產署',
+    img: '/img/meet93.png'
+  }
+];
+---
+
+<!-- Distinct Crisp White Background for Separation with Precise Scroll Margin -->
+<section id="customers" class="py-24 bg-[#ffffff] border-t border-black/5 shadow-inner scroll-mt-24 sm:scroll-mt-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-5xl font-bold text-[#1d1d1f] tracking-tight mb-4">
+        成功合作案例
+      </h2>
+      <div class="w-16 h-1 bg-brand-green mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Main Client Cards with Enlarged Logos & Pure White Crisp Backgrounds -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {clientsWithDesc.map(c => (
+        <div class="apple-card p-6 rounded-3xl flex flex-col justify-between bg-[#fbfbfd] border border-black/5 group">
+          <div>
+            <!-- Pure White Logo Container (Enlarged) -->
+            <div class="h-28 bg-white rounded-2xl p-4 flex items-center justify-center mb-5 border border-black/5 shadow-sm">
+              <img 
+                src={c.img} 
+                alt={c.name} 
+                class="max-h-20 max-w-full object-contain transform scale-110 group-hover:scale-115 transition-transform duration-300" 
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-[#1d1d1f] mb-2.5 group-hover:text-brand-green transition-colors flex items-center justify-between">
+              <span>{c.name}</span>
+              {c.url && (
+                <a 
+                  href={c.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  title="前往仰發科技官方網站"
+                  class="p-1 rounded-lg text-brand-green hover:bg-brand-green/10 transition-colors flex items-center justify-center"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke-width="1.8"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                  </svg>
+                </a>
+              )}
+            </h3>
+            <p class="text-[#424245] text-sm sm:text-base font-normal leading-relaxed text-justify">
+              {c.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Institutional & Financial Clients -->
+    <div class="mt-14 pt-12 border-t border-black/10">
+      <h3 class="text-center text-lg sm:text-xl font-semibold text-[#1d1d1f] mb-8">
+        金融保險與政府機構服務合作
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {institutionalClients.map(ic => (
+          <div class="apple-card p-6 rounded-3xl flex flex-col items-center justify-center text-center bg-[#fbfbfd] border border-black/5 group">
+            <div class="h-24 w-full flex items-center justify-center mb-4 bg-white rounded-2xl p-2 border border-black/5 shadow-sm">
+              <img 
+                src={ic.img} 
+                alt={ic.name} 
+                class="max-h-20 max-w-full object-contain transform scale-110 group-hover:scale-115 transition-transform duration-300" 
+              />
+            </div>
+            <h4 class="text-base font-semibold text-[#1d1d1f] group-hover:text-brand-green transition-colors">
+              {ic.name}
+            </h4>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

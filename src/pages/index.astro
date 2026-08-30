@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
+---
+
+<BaseLayout currentPath="/">
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- Multi-page Overview Section: 服務項目 vs 產品資訊 -->
+  <section class="py-24 bg-[#ffffff] border-t border-black/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-5xl font-bold text-[#1d1d1f] tracking-tight mb-4">
+          核心業務架構
+        </h2>
+        <div class="w-16 h-1 bg-brand-green mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- 服務項目導覽卡片 -->
+        <div class="apple-card p-8 sm:p-10 rounded-3xl flex flex-col justify-between border-t-4 border-t-brand-green group">
+          <div>
+            <div class="mb-6">
+              <span class="inline-block whitespace-nowrap text-sm sm:text-base font-bold text-[#648b14] bg-brand-green/15 border-2 border-brand-green/30 px-5 py-2 rounded-full tracking-wide shadow-sm">
+                專業顧問與營運
+              </span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-[#1d1d1f] mb-4">
+              服務項目
+            </h3>
+            <p class="text-[#6e6e73] text-base font-normal leading-relaxed mb-6 text-justify">
+              涵蓋 AI Agentic Engineering、跨境電商代理營運、行動裝置系統開發、資訊應用規劃設計與商業數據分析等 5 大專業服務，並累積商業周刊、中華三菱、公務機關等多家成功案例。
+            </p>
+            <ul class="space-y-2.5 text-sm text-[#424245] mb-8">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>
+                <span>AI Agentic Engineering 與跨平台生態</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>
+                <span>Amazon 跨境電商全流程營運</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>
+                <span>多家企業客戶與公務機關實績</span>
+              </li>
+            </ul>
+          </div>
+          <a 
+            href="/services" 
+            class="w-full py-3.5 rounded-full bg-brand-green hover:bg-brand-green-dark text-black font-semibold text-center transition-all shadow-md block"
+          >
+            探索服務項目全貌 &rarr;
+          </a>
+        </div>
+
+        <!-- 產品資訊導覽卡片 -->
+        <div class="apple-card p-8 sm:p-10 rounded-3xl flex flex-col justify-between border-t-4 border-t-brand-blue group">
+          <div>
+            <div class="mb-6">
+              <span class="inline-block whitespace-nowrap text-sm sm:text-base font-bold text-[#23749c] bg-brand-blue/15 border-2 border-brand-blue/30 px-5 py-2 rounded-full tracking-wide shadow-sm">
+                國家專利技術
+              </span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-[#1d1d1f] mb-4">
+              產品資訊
+            </h3>
+            <p class="text-[#6e6e73] text-base font-normal leading-relaxed mb-6 text-justify">
+              以國家發明專利 I625685號 一物一碼技術為核心，提供 Ya!Scan 雲端防偽與保固系統，包含安全線上防偽、線上保固資訊與一對一精準行銷三大核心模組。
+            </p>
+            <ul class="space-y-2.5 text-sm text-[#424245] mb-8">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>
+                <span>Ya!Scan 雲端防偽保固系統與 App</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>
+                <span>三大核心功能方案 (防偽/保固/行銷)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>
+                <span>中華民國發明專利與官方商標</span>
+              </li>
+            </ul>
+          </div>
+          <a 
+            href="/products" 
+            class="w-full py-3.5 rounded-full bg-[#1d1d1f] hover:bg-black text-white font-semibold text-center transition-all shadow-md block"
+          >
+            查看產品資訊詳情 &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聯絡我們導引區塊 -->
+  <section class="py-20 bg-apple-bg border-t border-black/5 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#1d1d1f] mb-4">
+        準備好為您的企業加速成長了嗎？
+      </h2>
+      <p class="text-[#6e6e73] text-lg font-normal mb-8">
+        無論是 Agentic 程式設計合作、電商代營運諮詢，或是防偽保固系統導入，歡迎立即與我們聯絡。
+      </p>
+      <a 
+        href="/contact" 
+        class="inline-block px-10 py-4 rounded-full bg-brand-green hover:bg-brand-green-dark text-black font-semibold text-lg transition-all shadow-lg hover:scale-105"
+      >
+        前往聯絡資訊 &rarr;
+      </a>
+    </div>
+  </section>
+</BaseLayout>

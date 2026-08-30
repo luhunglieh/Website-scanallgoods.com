@@ -1,0 +1,163 @@
+---
+const patents = [
+  {
+    tag: '國家發明專利',
+    number: '中華民國新發明專利 I625685 號',
+    img: '/img/test1.webp',
+    desc: '雲端一物一碼動態防偽、首次掃描啟用註冊、防重刷複製機制與數位化線上保固存證技術。'
+  },
+  {
+    tag: '官方註冊商標',
+    number: '中華民國商標 01780997 號',
+    img: '/img/test2.webp',
+    desc: '端詳互動資訊與 Ya!Scan 品牌識別、雲端防偽平台及一對一精準行銷服務合法註冊商標。'
+  }
+];
+---
+
+<section id="patent" class="py-20 bg-[#ffffff] border-t border-black/5 scroll-mt-24 sm:scroll-mt-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <h2 class="text-3xl sm:text-5xl font-bold text-[#1d1d1f] tracking-tight mb-4">
+        國家專利與商標認證
+      </h2>
+      <div class="w-16 h-1 bg-brand-green mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Mobile Interactive Slider -->
+    <div class="md:hidden max-w-sm mx-auto relative">
+      <div id="patent-mobile-carousel" class="overflow-hidden relative rounded-3xl">
+        <div id="patent-mobile-track" class="flex transition-transform duration-300 ease-out">
+          {patents.map((p, idx) => (
+            <div class="w-full shrink-0 px-1">
+              <div class="apple-card p-6 rounded-3xl flex flex-col justify-between bg-[#fbfbfd] border border-black/5 shadow-sm min-h-[220px]">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-sm sm:text-base font-bold text-brand-green bg-brand-green/10 px-3.5 py-1 rounded-full uppercase tracking-wide">
+                      {p.tag}
+                    </span>
+                    <span class="text-sm text-[#86868b] font-mono font-semibold">
+                      0{idx + 1} / 02
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="w-16 h-16 rounded-2xl bg-white border border-black/5 p-2 flex items-center justify-center shrink-0 shadow-sm">
+                      <img src={p.img} alt={p.number} class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="text-lg font-bold text-[#1d1d1f]">
+                      {p.number}
+                    </h3>
+                  </div>
+                  <p class="text-[#424245] text-xs leading-relaxed">
+                    {p.desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="flex items-center justify-between mt-3 px-2">
+        <button 
+          id="patent-prev-btn" 
+          aria-label="上一張專利卡"
+          class="w-8 h-8 rounded-full bg-white border border-black/10 shadow-md flex items-center justify-center text-[#1d1d1f] active:scale-95 transition-transform"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <div class="flex items-center gap-2">
+          <button class="patent-dot w-6 h-1.5 rounded-full bg-brand-green transition-all" data-idx="0"></button>
+          <button class="patent-dot w-2 h-1.5 rounded-full bg-black/20 transition-all" data-idx="1"></button>
+        </div>
+
+        <button 
+          id="patent-next-btn" 
+          aria-label="下一張專利卡"
+          class="w-8 h-8 rounded-full bg-white border border-black/10 shadow-md flex items-center justify-center text-[#1d1d1f] active:scale-95 transition-transform"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Desktop Grid: 2 parallel columns -->
+    <div class="hidden md:grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {patents.map(p => (
+        <div class="apple-card p-8 sm:p-10 rounded-3xl flex flex-col sm:flex-row items-center gap-8 group bg-[#fbfbfd] border border-black/5 shadow-sm">
+          <div class="w-28 h-28 rounded-3xl bg-white border border-black/5 p-3 flex items-center justify-center shrink-0 shadow-sm">
+            <img src={p.img} alt={p.number} class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div>
+            <span class="text-sm sm:text-base font-bold text-brand-green bg-brand-green/10 px-3.5 py-1 rounded-full uppercase tracking-wide inline-block mb-2.5">
+              {p.tag}
+            </span>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#1d1d1f] mb-3">
+              {p.number}
+            </h3>
+            <p class="text-[#424245] text-sm sm:text-base font-normal leading-relaxed">
+              {p.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Mobile Patent Touch Swipe & Arrow Script -->
+<script is:inline>
+  (function() {
+    let patentIdx = 0;
+    const totalPatentCards = 2;
+    const track = document.getElementById('patent-mobile-track');
+    const dots = document.querySelectorAll('.patent-dot');
+    const prevBtn = document.getElementById('patent-prev-btn');
+    const nextBtn = document.getElementById('patent-next-btn');
+    const carousel = document.getElementById('patent-mobile-carousel');
+
+    function updatePatentCarousel(idx) {
+      patentIdx = (idx + totalPatentCards) % totalPatentCards;
+      if (track) {
+        track.style.transform = `translateX(-${patentIdx * 100}%)`;
+      }
+      dots.forEach((dot, i) => {
+        if (i === patentIdx) {
+          dot.className = 'patent-dot w-6 h-1.5 rounded-full bg-brand-green transition-all';
+        } else {
+          dot.className = 'patent-dot w-2 h-1.5 rounded-full bg-black/20 transition-all';
+        }
+      });
+    }
+
+    prevBtn?.addEventListener('click', () => updatePatentCarousel(patentIdx - 1));
+    nextBtn?.addEventListener('click', () => updatePatentCarousel(patentIdx + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => updatePatentCarousel(i)));
+
+    // Touch Swipe
+    let startX = 0;
+    let endX = 0;
+
+    carousel?.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    carousel?.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          updatePatentCarousel(patentIdx + 1);
+        } else {
+          updatePatentCarousel(patentIdx - 1);
+        }
+      }
+    }, { passive: true });
+  })();
+</script>
