@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://luhunglieh.github.io/Website-scanallgoods.com/sitemap.xml
+Sitemap: https://www.scanallgoods.com/sitemap.xml
