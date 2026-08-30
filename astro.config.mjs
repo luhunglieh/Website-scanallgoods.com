@@ -15,5 +15,6 @@ export default defineConfig({
   compressHTML: true,
   build: {
     format: 'file',
+    assets: 'assets', // Use 'assets' instead of '_astro' to prevent GitHub Pages Jekyll underscore filtering
   }
 });
